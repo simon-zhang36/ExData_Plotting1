@@ -1,4 +1,5 @@
-data <- read.delim('./data/household_power_consumption.txt',sep=";",na.strings='?')
+unzip("./data/exdata-data-household_power_consumption.zip",files='./data',unzip = 'internal')
+data <- read.delim('./household_power_consumption.txt',sep=";",na.strings='?')
 data1 <- rbind(subset(data,data$Date == '1/2/2007'),subset(data,data$Date == '2/2/2007'))
 data1 <- data.frame(data1,stringsAsFactors=FALSE)
 data1$"Date/Time" <- paste(data1$Date,data1$Time)
